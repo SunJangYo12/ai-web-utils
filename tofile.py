@@ -16,7 +16,8 @@ with open("index.html", "r") as f:
 count = 1
 
 for jsonData in conditionals:
-   title = jsonData["title"]
+   xtitle = jsonData["title"].split("/")
+   title = xtitle[0]
    dest = f"data/{count}. {title}" #title belum difilter, error jika ada karakter unik
    os.mkdir(dest)
 
