@@ -14,12 +14,10 @@ white_color="\e[1;97m"
 normal_color="\e[1;0m"
 reset_color="\033[0m"
 
-disk1="/home/gumi/Music"
-disk2="/media/gumi/3472B945063ED819/Music_kano_Size_183_525_34"
-disk3="/media/gumi/66EC27DFEC27A7EF/Users/Administrator/Music/Music_kano_Size_33_4"
+disk1="/media/jin/0B6FFD9D454A7F3D/Musik"
 
-fileproc="DATA_mp3.txt"
-filename="x/$fileproc"
+fileproc="playflac.txt"
+filename="$fileproc"
 
 #filename="musiktxt/$fileproc"
 fileresult="result/jin$fileproc"
@@ -47,11 +45,7 @@ while read p; do
       echo -ne ">> disk$idisk"
 
       if [ $idisk == 1 ]; then
-         iter=`find "$disk1" -name "$data"`
-      elif [ $idisk == 2 ]; then
-         iter=`find "$disk2" -name "$data"`
-      elif [ $idisk == 3 ]; then
-         iter=`find "$disk3" -name "$data"`
+         iter=`find "$disk1" -iname "$data"`
       else
          fail=$((fail+1))
          echo
